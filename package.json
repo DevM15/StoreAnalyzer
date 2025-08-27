@@ -16,7 +16,8 @@
     "shopify": "shopify",
     "prisma": "prisma",
     "graphql-codegen": "graphql-codegen",
-    "vite": "vite"
+    "vite": "vite",
+    "vercel-build": "prisma generate && prisma migrate deploy && remix vite:build"
   },
   "type": "module",
   "engines": {
@@ -49,6 +50,7 @@
     "lucide-react": "^0.516.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "remix": "^2.17.0",
     "shopify-api": "^0.2.3",
     "vite-tsconfig-paths": "^5.0.1"
   },
