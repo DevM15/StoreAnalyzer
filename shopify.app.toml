@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "fd2af40f9e26ebe1f61c55af1d8710db"
+name = "store-analyzer"
+handle = "store-analyzer-1"
+application_url = "https://threatened-wifi-fcc-goto.trycloudflare.com"
+embedded = true
+
+[build]
+include_config_on_deploy = true
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2025-04"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products,write_script_tags,read_script_tags,write_content,write_online_store_pages,read_themes"
+
+[auth]
+redirect_urls = ["https://threatened-wifi-fcc-goto.trycloudflare.com/auth/callback", "https://threatened-wifi-fcc-goto.trycloudflare.com/auth/shopify/callback", "https://threatened-wifi-fcc-goto.trycloudflare.com/api/auth/callback"]
+
+[pos]
+embedded = false

@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:dev.sqlite"
+}
+
+model Session {
+  id            String    @id
+  shop          String
+  state         String
+  isOnline      Boolean   @default(false)
+  scope         String?
+  expires       DateTime?
+  accessToken   String
+  userId        BigInt?
+  firstName     String?
+  lastName      String?
+  email         String?
+  accountOwner  Boolean   @default(false)
+  locale        String?
+  collaborator  Boolean?  @default(false)
+  emailVerified Boolean?  @default(false)
+}
+
+model LLMResponse {
+  id        String   @id @default(uuid())
+  popup     String
+  landing   String
+  createdAt DateTime @default(now())
+}
+
+model PagePath {
+  id        String   @id @default(uuid())
+  shopName  String   @unique
+  path      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ShopSession {
+  id          Int      @id @default(autoincrement())
+  shop        String   @unique
+  accessToken String
+  scope       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model ToolInstallation {
+  id        Int      @id @default(autoincrement())
+  toolName  String   @unique
+  metrics   Int?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Bookmark {
+  id          Int      @id @default(autoincrement())
+  shopName    String   @unique
+  titles      String   @default("[]") // JSON array stored as string
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
