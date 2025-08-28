@@ -3,7 +3,7 @@
 client_id = "fd2af40f9e26ebe1f61c55af1d8710db"
 name = "store-analyzer"
 handle = "store-analyzer-1"
-application_url = "https://threatened-wifi-fcc-goto.trycloudflare.com"
+application_url = "https://belgium-ic-connectivity-transparency.trycloudflare.com"
 embedded = true
 
 [build]
@@ -26,7 +26,7 @@ api_version = "2025-04"
 scopes = "write_products,write_script_tags,read_script_tags,write_content,write_online_store_pages,read_themes"
 
 [auth]
-redirect_urls = ["https://threatened-wifi-fcc-goto.trycloudflare.com/auth/callback", "https://threatened-wifi-fcc-goto.trycloudflare.com/auth/shopify/callback", "https://threatened-wifi-fcc-goto.trycloudflare.com/api/auth/callback"]
+redirect_urls = ["https://belgium-ic-connectivity-transparency.trycloudflare.com/auth/callback", "https://belgium-ic-connectivity-transparency.trycloudflare.com/auth/shopify/callback", "https://belgium-ic-connectivity-transparency.trycloudflare.com/api/auth/callback"]
 
 [pos]
 embedded = false
